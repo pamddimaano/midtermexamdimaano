@@ -1,0 +1,19 @@
+{% extends 'base.html' %}'
+
+{% block head %}
+	DETAILS
+{% endblock %}
+
+{% block body %}
+	Firstname: {{ candidate.firstname }} <br />
+	Lastname: {{ candidate.lastname }} <br />
+	Position: {{ candidate.position }} <br />
+	Vote:  <br /><br />
+	Platform: <br/> {{ candidate.platform }}  <br /><br />
+
+
+	<a href="{% url 'votes:candidate_update' candidate.id %}"><input type="submit" value="Update"> <br/></a>
+	<a href="{% url 'votes:index' %}"><input type="submit" value="Return"> <br/> <br/></a>
+
+	<a href="{% url 'votes:candidate_create' %}"><input type="submit" value="Create New Candidate"> <br/></a>
+{% endblock %}
